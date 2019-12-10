@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AAAA,KACE,qBAAsB,CAGxB,IACE,mCAAoC,CACpC,qBAAsB,CAFxB,SAKI,qBAAc","file":"main.min.css","sourcesContent":["#app {\n  font-family: monospace;\n}\n\nsvg {\n  enable-background: new 0 0 2560 1600;\n  background-color: #eee;\n\n  rect {\n    fill: rgba(red, .5);\n  }\n}\n"]}

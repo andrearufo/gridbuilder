@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Grid Builder</title>
+
+    <link rel="stylesheet" href="dist/css/main.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h1>{{ message }}</h1>
+
+        <div>
+            Colonne: <input type="number" v-model.number="col">
+        </div>
+        <div>
+            Container: <input type="number" v-model.number="container">
+        </div>
+        <div>
+            Gutter: <input type="number" v-model.number="gutter">
+        </div>
+        <div>
+            Width: <code>{{ width }}</code>
+        </div>
+
+        <!-- <ul>
+            <li v-for="c in col">
+                C : {{ c }}
+                Offset : {{ offset(c) }}
+            </li>
+        </ul> -->
+
+        <br>
+        <hr> <br>
+
+        <svg version="1.1" id="ul_1600px" opacity="0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2560 1600" xml:space="preserve">
+
+            <rect :x="start" y="0" class="st1" :width="container" height="1600" />
+            <rect v-for="c in col" :x="offset(c)" y="0" class="st0" :width="width" height="1600" />
+
+        </svg>
+
+    </div>
+
+    <script src="dist/js/app.js" charset="utf-8"></script>
+</body>
+
+</html>
