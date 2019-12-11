@@ -8,7 +8,8 @@
 
     <link rel="stylesheet" href="dist/css/main.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js" charset="utf-8"></script>
+
 </head>
 
 <body>
@@ -30,22 +31,24 @@
             Width: <code>{{ width }}</code>
         </div>
 
-        <!-- <ul>
+        <br>
+        <hr>
+        <br>
+
+        <button id="download-to-svg" @click="download">DOWNLOAD</button>
+
+        <div id="grid" v-html="grid"></div>
+
+        <br>
+        <hr>
+        <br>
+
+        <ul>
             <li v-for="c in col">
                 C : {{ c }}
                 Offset : {{ offset(c) }}
             </li>
-        </ul> -->
-
-        <br>
-        <hr> <br>
-
-        <svg version="1.1" id="ul_1600px" opacity="0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2560 1600" xml:space="preserve">
-
-            <rect :x="start" y="0" class="st1" :width="container" height="1600" />
-            <rect v-for="c in col" :x="offset(c)" y="0" class="st0" :width="width" height="1600" />
-
-        </svg>
+        </ul>
 
     </div>
 
