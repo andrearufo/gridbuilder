@@ -1,12 +1,36 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css";
+
+*{
+    margin: 0;
+    padding: 0
+}
+
 #app {
-  font-family: monospace;
+    font-family: monospace;
+}
+
+.wrapper{
+    position: fixed;
+    left: 2rem;
+    top: 2rem;
+    background: rgba(white, .7);
+    padding: 2rem;
+    box-shadow: .6rem .6rem 0 rgba(black, .2);
+    z-index: 999;
+
+    .group{
+        margin-bottom: .6rem;
+    }
+    input{
+        display: block;
+    }
 }
 
 svg {
-  enable-background: new 0 0 2560 1600;
-  background-color: #eee;
+    enable-background: new 0 0 2560 1600;
+    background-color: #eee;
 
-  rect {
-    fill: rgba(red, .5);
-  }
+    rect {
+        fill: rgba(red, .5);
+    }
 }

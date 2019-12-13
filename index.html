@@ -16,39 +16,33 @@
 
     <div id="app">
 
-        <h1>{{ message }}</h1>
+        <div class="wrapper">
+            <h1>{{ message }}</h1>
 
-        <div>
-            Colonne: <input type="number" v-model.number="col">
-        </div>
-        <div>
-            Container: <input type="number" v-model.number="container">
-        </div>
-        <div>
-            Gutter: <input type="number" v-model.number="gutter">
-        </div>
-        <div>
-            Width: <code>{{ width }}</code>
-        </div>
+            <div class="group">
+                Colonne: <input type="number" v-model.number="col">
+            </div>
+            <div class="group">
+                Container: <input type="number" v-model.number="container">
+            </div class="group">
+            <div class="group">
+                Gutter: <input type="number" v-model.number="gutter">
+            </div>
+            <div class="group">
+                Width: <input type="number" v-model.number="width" disabled readonly>
+            </div>
 
-        <br>
-        <hr>
-        <br>
+            <!-- <ul>
+                <li v-for="c in col">
+                    C : {{ c }}
+                    Offset : {{ offset(c) }}
+                </li>
+            </ul> -->
 
-        <button id="download-to-svg" @click="download">DOWNLOAD</button>
+            <button id="download-to-svg" @click="download">DOWNLOAD</button>
+        </div>
 
         <div id="grid" v-html="grid"></div>
-
-        <br>
-        <hr>
-        <br>
-
-        <ul>
-            <li v-for="c in col">
-                C : {{ c }}
-                Offset : {{ offset(c) }}
-            </li>
-        </ul>
 
     </div>
 

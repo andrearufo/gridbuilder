@@ -3,7 +3,7 @@ var app = new Vue({
 
     data: {
         message: 'Grid builder',
-        layer: 2560,
+        canvas: 2560,
         col: 12,
         container: 1620,
         gutter: 20
@@ -11,7 +11,7 @@ var app = new Vue({
 
     computed: {
         start: function() {
-            return (this.layer - this.container) / 2;
+            return (this.canvas - this.container) / 2;
         },
 
         width: function() {
@@ -22,6 +22,7 @@ var app = new Vue({
             var grid = [];
 
             grid.push('<svg version="1.1" id="ul_1600px" opacity="0.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2560 1600" style="enable-background:new 0 0 2560 1600;" xml:space="preserve">');
+                grid.push('<style type="text/css"> .st0{ opacity:0.5; fill:red; }</style>');
                 grid.push('<rect x="'+this.start+'" y="0" class="st0" width="'+this.container+'" height="1600" />');
                 for (var c = 1; c <= this.col; c++) {
                     grid.push('<rect x="'+this.offset(c)+'" y="0" class="st0 col'+c+'" width="'+this.width+'" height="1600" />');
@@ -40,8 +41,7 @@ var app = new Vue({
 
         download: function(){
             var svg = [];
-            svg.push('data:image/svg+xml,<?xml version="1.0" encoding="utf-8"?><!-- Generator: Grid Generator by Andrea Rufo  -->');
-            svg.push('<style type="text/css"> .st0{ opacity:0.5; fill:red; }</style>');
+            svg.push('data:image/svg+xml,<?xml version="1.0" encoding="utf-8"?><!-- Generator: Grid Builder by Andrea Rufo  -->');
             svg.push(this.grid);
 
             svg = svg.join("\n");
